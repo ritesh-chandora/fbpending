@@ -1,0 +1,21 @@
+
+<p style="margin:10px 0px 0px 40px; ">
+	<img src="images/me.png"></p>
+<p style="margin-left: 120px; ">
+	&nbsp;</p>
+<p style="margin-left: 120px; ">
+	&nbsp;</p>
+<div id="cke_pastebin" style="margin-left: 40px; ">
+	<strong>About me:</strong></div>
+<div id="cke_pastebin" style="margin-left: 40px; ">
+	<span style="font-family:comic sans ms,cursive;"><span style="color:#696969;">A graduate frm Lachoo Memorial College of Science and Technology jodhpur... Now pursuing MCA from NIT calicut...</span></span></div>
+<div id="cke_pastebin" style="margin-left: 40px; ">
+	<span style="font-family:comic sans ms,cursive;"><span style="color:#696969;">Interest in codding...<br />
+	Happy to be a friend....</span></span></div>
+<p style="margin-left: 40px; ">
+	<br />
+	<strong>Contact:</strong><br />
+	<span style="color:#696969;"><strong>email</strong> : ritesh_chandora@yahoo.co.in<br />
+	<strong>phone</strong>: +918893970261<br />
+	<strong>facebook</strong>: www.facebook.com/ritesh.chandora<br /><br />
+	</p>
