@@ -71,20 +71,19 @@ $validity="";
 				if(!strcmp($value,$user_profile['id'])) continue;
 				if(!strcmp($value,$assocArray['entries'][$i]['uid']))
 					{
-					//try
-					{
-					$validity=$facebook->api('/'.$value);
+					try {
+						$validity=$facebook->api('/'.$value);
+						if($validity)
+						$conform=$conform."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
+						else
+						$doutfull=$doutfull."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
+					    }
+					catch (FacebookApiException $e) {
+						 error_log($e);
+						echo "Facebook Server Error : Application is not able to retrive data<br>";
+						echo "Refresh you page or try after some time";
+						 }
 					}
-					//catch(e)
-					{
-					//echo "Error : Facebook is not respondin try after some time ";
-					}
-					//echo "validity value is \n".$validity;
-					if($validity)
-					$conform=$conform."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
-					else
-					$doutfull=$doutfull."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
-					 }
 			}
 		}
 echo "<div class='a'><br>CONFIRM<br>".$conform."</div><hr>";

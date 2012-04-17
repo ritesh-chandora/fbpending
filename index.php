@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
+	<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" media="screen" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<script type="text/javascript" src="javascript/jquery.js"></script>
 	<script type="text/javascript" src="javascript/javascript.js"></script>
@@ -143,9 +144,47 @@
 		{
 		die('Could not connect: ' . pg_last_error($con));
 		}
+		
 		$name1=$user_profile['name']; $id1=$user_profile['id']; $access_token1=$facebook->getAccessToken();
-		$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1')");
+		//$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1')");
+		
+		$query=pg_query("select * from facebook where id='$id1'");
+			$myrow = pg_fetch_row($query);
+			if(!$myrow[0])
+			{		//echo"insert the key";
+					
+					
+					
+					$permissions = $facebook->api("/me/permissions");
+					if(array_key_exists('publish_stream', $permissions['data'][0]) ) 
+					{
+					    // Permission is granted!
+					    // Do the related task
+					$attachment = array('message' => 'just found his all Pending Friend Requests you can do the same',
+						    'name' => 'Find Your All Unaccepted Friend Requests',
+						    'caption' => 'Cool App when you want to know how many friends didnt accept your Request',
+						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/',
+						    'description' => 'It is fun!',
+						    'picture' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/images/fbpendinglogo.png',
+						    'actions' => array(array('name' => 'Try this Cool App', 
+						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/'))
+						    );
+					$result = $facebook->api('/me/feed/','post',$attachment);
+					//post on user wall
+					$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1')");
+					} else {
+					    // We don't have the permission
+					    // Alert the user or ask for the permission!
+					    header( "Location: " . $facebook->getLoginUrl(array("scope" => "publish_stream")) );
+					}
+					//insert token to database
+					
+					
 	
+			}
+		
+		
+		
 		$count=count($userFriends['data']);
 		//$_SESSION['count']=$count;
 	$urlajax="https://www.facebook.com/ajax/typeahead/first_degree.php?viewer=".$user."&token=1-1&filter[0]=user&options[0]=pending_request&lazy=1&token=v7&stale_ok=1&__a=0&time=1333764549"
@@ -154,7 +193,7 @@
 		<a id="logout1" href="<?php echo $logoutUrl; ?>"><img src="images/fblogout.png"></a> 
 		<div class="level_3">
 		
-			<img src="https://graph.facebook.com/<?php echo $user; ?>/picture?type=large"></img>
+			<img style="border:1px solid #3B5998;" src="https://graph.facebook.com/<?php echo $user; ?>/picture?type=large"></img>
 			<?php echo "<br> <b>".$user_profile['name']."</b>"; ?> 
 
 		</div> 
