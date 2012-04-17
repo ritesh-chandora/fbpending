@@ -6,13 +6,31 @@
 	<script type="text/javascript" src="javascript/javascript.js"></script>
 	<title>Find Your Pending Friend Request developed by Ritesh Chandora</title>
 	</head>
+	
+	
 	<body id="index">
+<div id="suggestionbox" > 
+
+	<div class="suggestionbox_heading">Have any suggestions? Click Me!</div>
+
+	<div class="box">    				
+			<div id="boxresult">Thank you very much for your Valuable feedback</div>
+			<div class="box_input" >
+				Suggesion Box:<br>
+				<label for="name">Name: </label><input type="text" name="name" size="15" id="name" value="" style="margin:5px 0px 0px 13px ;"><br>
+				<label for="email">Email: </label><input type="text" name="email" size="15" id="email" style="margin:5px 0px 0px 13px ;"><br>
+				<label for="comm">Comments:</label><br><textarea name="comm" id="comm" rows="4" cols="25" style="margin:5px 0px 0px 2px ;"></textarea><br>
+				<input type="button" name="submit" id="submit" value="Submit">
+			</div>
+	</div>
+</div>
 
 	<div class="container">
 
 		<div class="level_1">
-		<div id="header"><h1>Ritesh Chandora</h1></div>
-				
+		
+		<div id="header"><h1 align=center>Ritesh Chandora</h1> </div>
+		
 		</div>
 
 		<div class="level_2">
@@ -81,19 +99,29 @@
 		<span class="result2"></span>
 				<div class="level4_content">
 		
-					<pre> 			       Hello Guest 
-					<br> Click on the bag to open it and see your old pending friend requests....</pre>
-					 <span class="startlink"><a id="temp"href="<?php echo $loginUrl;?>"><img src="images/start.png"></a></span>
+					
+<h2 style="margin:40px 40px 0px 40px; ">
+	<span style="color:#000033;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Hello Friend,</span></span></h2> <br />
+<p style="margin:0px 40px 0px 40px; text-align: justify; ">
+	<span style="color:#696969;"><span style="font-family:comic sans ms,cursive;"><span style="font-size:16px;">Some times we send a lot of Friend Requests to people and wait for their approval. But some people don&#39;t accept our request and&nbsp;</span><span style="font-size: 16px; ">just&nbsp;ignore it, If you are inquisitive and want to know how many of your requests are either pending or have not been accepted, you simply cannot, since Facebook does not provide any such facility. It is the lack of such a feature that has inspired me to develop this application, that lets you find out which friends have yet to accept or have completely ignored the requests that you sent them on Facebook.</span></span></span></p> <br /> 
+<h3 style="text-align: center; ">
+	<span style="font-family:courier new,courier,monospace;"><span style="font-family:georgia,serif;"><span style="font-size: 16px; "><span style="color:#000033;">Here is Cool App to find how many requests you have pending.</span><br />
+	
+
+	<span class="startlink"><a id="temp"href="<?php echo $loginUrl;?>"><img src="images/enter.png"></span><br>
+	<span style="font-family:verdana,geneva,sans-serif;">Click Here</span></span></span></span></h3></a>
 					<div class="level4_back"></div>
 				</div>
 	</div>
 
 		<div class="level_5">
-			<p class="para">Pending Request &copy; 2010. All Rights Reserved. <a href="terms.html">Copyright Policy</a><br>
+		<img src="images/fbpendinglogo.png" width=200 height=55 style="margin:0px 10px 0px 00px; float:left;">
+			<p class="para">Pending Request &copy; 2012. All Rights Reserved. <a href="terms.html">Copyright Policy</a><br>
 			Design by <a href="http://www.facebook.com/ritesh.chandora" title="Ritesh Chandora">Ritesh Chandora</a> </p>
 		</div>
 
 	</div>
+	
 	</body>
 	</html>
 	<?php
@@ -161,7 +189,8 @@
 	
 	
 		<div class="level_5">
-			<p class="para">Pending Request &copy; 2010. All Rights Reserved. <a href="terms.html">Copyright Policy</a><br>
+		<img src="images/fbpendinglogo.png" width=200 height=55 style="margin:0px 10px 0px 00px; float:left;">
+			<p class="para">Pending Request &copy; 2012. All Rights Reserved. <a href="terms.html">Copyright Policy</a><br>
 			Design by <a href="http://www.facebook.com/ritesh.chandora" title="Ritesh Chandora">Ritesh Chandora</a> </p>
 		</div>
 

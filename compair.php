@@ -1,3 +1,22 @@
+<div style="margin: 40px 40px 0px 40px; text-align: center; ">
+	<span style="font-family:trebuchet ms,helvetica,sans-serif;"><span style="font-size:14px;">&nbsp; &nbsp; Guys here are your Pending Friend Requests.</span></span></div>
+<div style="margin: 10px 40px 0px 40px; text-align: justify; ">
+	<br />
+	<span style="font-family:trebuchet ms,helvetica,sans-serif;"><span style="font-size:14px;">&nbsp; &nbsp; As you can see there are two sections.<br />
+	&nbsp; &nbsp; Images in <strong>Conform</strong> section are your actual Pending Requests.&nbsp;And Images in <strong>Doubtful</strong> section are might be either Pending Request or your friend who once deactivate Facebook account or his privacy setting did not allow to access his data.</span></span></div>
+
+<div style="margin: 10px 40px 0px 40px; ">
+	&nbsp;</div>
+<div style="margin: 10px 40px 0px 40px; ">
+	<span style="font-family:verdana,geneva,sans-serif;"><span style="font-size:14px;">If you wanna delete your request then<br />
+	<br />
+	1 Click on the Pending Requests and&nbsp;their profile will open in next tab.<br />
+	2. Put mouse on &nbsp;<img alt="image" src="images/friendrequestsend.png" style="vertical-align:middle;font-size: 14px; font-family: tahoma, geneva, sans-serif; width: 109px; height: 17px; " />&nbsp; and hover will appear, then click on Cancle Request.</span></span><br />
+	&nbsp;</div>
+
+
+
+	<hr>
 <?php
 @session_start();
 require 'src/facebook.php';
