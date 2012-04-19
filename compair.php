@@ -64,6 +64,7 @@ $i=0;
 $conform="";
 $doutfull="";
 $validity="";
+$counter=0;
 	for($i=0;$i<count($assocArray['entries']);$i++)
 		{
 			foreach($arry4 as $value)
@@ -72,6 +73,7 @@ $validity="";
 				if(!strcmp($value,$assocArray['entries'][$i]['uid']))
 					{
 					try {
+						$counter++;
 						$validity=$facebook->api('/'.$value);
 						if($validity)
 						$conform=$conform."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
@@ -86,6 +88,10 @@ $validity="";
 					}
 			}
 		}
+if($counter)
+		{
 echo "<div class='a'><br>CONFIRM<br>".$conform."</div><hr>";
 echo "<div class='a'><br>DOUBTFULL<br>".$doutfull."</div>";
-?>
+}
+else
+echo "<br><br><br>&nbsp;&nbsp;&nbsp;  Good News that You don't have any Pending Friend Request..OR there might be an error in retriving data from facebook server";

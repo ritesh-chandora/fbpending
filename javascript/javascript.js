@@ -3,7 +3,7 @@
 			  $(".button").click(function(){
 			  	$('#lodingimg').show();
 			  	$('.button').hide();
-				txt="textarea1="+$(".textarea").val();
+				txt="textarea1="+$(".textarea").val().replace(/&/g, "and");
 				    $.post("compair.php",txt,function(result){
 				    $(".result1").html(result);
 				    $(".level4_content").hide();

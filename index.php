@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<script type="text/javascript" src="javascript/jquery.js"></script>
 	<script type="text/javascript" src="javascript/javascript.js"></script>
-	<title>Find Your Pending Friend Request developed by Ritesh Chandora</title>
+	<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 2.0</title>
 	</head>
 	
 	
@@ -86,7 +86,9 @@
 	{
 	//echo "logout h ";
 	//header("include :","http:\/\/andromeda.nitc.ac.in\/~ritesh\/fbpending\/");
-	$params = array('scope' => 'user_location,user_location,friends_location,friends_location,friends_birthday,user_relationship_details,friends_relationship_details,user_about_me	friends_about_me,user_hometown,friends_hometown,user_location,friends_location,user_relationships,friends_relationships,user_photos,friends_photos');
+	//$params = array('scope' => 'user_location,user_location,friends_location,friends_location,friends_birthday,user_relationship_details,friends_relationship_details,user_about_me	friends_about_me,user_hometown,friends_hometown,user_location,friends_location,user_relationships,friends_relationships,user_photos,friends_photos');
+	$params = array('scope' => 'user_photos,friends_photos,publish_stream');
+	
 	$loginUrl = $facebook->getLoginUrl($params);
 	//echo $loginUrl;
 
@@ -160,7 +162,7 @@
 					{
 					    // Permission is granted!
 					    // Do the related task
-					$attachment = array('message' => 'just found his all Pending Friend Requests you can do the same',
+					$attachment = array('message' => 'just found all their Pending Friend Requests you can do the same',
 						    'name' => 'Find Your All Unaccepted Friend Requests',
 						    'caption' => 'Cool App when you want to know how many friends didnt accept your Request',
 						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/',
@@ -187,7 +189,7 @@
 		
 		$count=count($userFriends['data']);
 		//$_SESSION['count']=$count;
-	$urlajax="https://www.facebook.com/ajax/typeahead/first_degree.php?viewer=".$user."&token=1-1&filter[0]=user&options[0]=pending_request&lazy=1&token=v7&stale_ok=1&__a=0&time=1333764549"
+	$urlajax="https://www.facebook.com/ajax/typeahead/first_degree.php?viewer=".$user."&token=1-1&filter[0]=user&options[0]=pending_request&lazy=1&token=v7&stale_ok=1&__a=0&time=".time();
 	?>
 		<a id="logout" href="logout.php"><img src="images/applogout.png"></a>
 		<a id="logout1" href="<?php echo $logoutUrl; ?>"><img src="images/fblogout.png"></a> 
