@@ -1,15 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<head>
-	<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" media="screen" />
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
-	<script type="text/javascript" src="javascript/jquery.js"></script>
-	<script type="text/javascript" src="javascript/javascript.js"></script>
-	<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 2.0</title>
+	<head>
+		<meta name="google-site-verification" content="HWsEJtzpRoAg59TT4cWgeI8aA6-HvRnw6StbzTxODu8" />
+		<meta name="description" content="An Application for Find Your Pending (or unaccepted) Friend Requests in Facebook" />
+		<meta name="keywords" content="Facebook Application,Pending Friend Request,Ritesh Chandora,unaccepted Friend Request" />
+		<meta name="author" content="Ritesh Chandora" />
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta property="og:title" content="Find Your Pending Friend Request developed by Ritesh Chandora Version 2.0" />
+		<meta property="og:description" content="An Application for Find Your Pending (or unaccepted) Friend Requests in Facebook" />
+		<meta property="og:image" content="http://andromeda.nitc.ac.in/~ritesh/fbpending/images/fbpendinglogo.png" />
+		<meta property="og:url"	content="http://andromeda.nitc.ac.in/~ritesh/fbpending/">
+		<link rel="shortcut icon" type="image/x-icon" href="images/icon.png" media="screen" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
+		
+		<script type="text/javascript" src="javascript/jquery.js"></script>
+		<script type="text/javascript" src="javascript/javascript.js"></script>
+		
+		<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 2.0</title>
 	</head>
 	
 	
 	<body id="index">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31100825-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 <div id="suggestionbox" > 
 
 	<div class="suggestionbox_heading">Have any suggestions? Click Me!</div>
@@ -57,12 +81,16 @@
 	@session_start();
 	//$_SESSION['name']= "ritesh chandora";
 	require 'src/facebook.php';
-	$facebook = new Facebook(array(
-	  'appId'  => '201415399962503',
-	  'secret' => 'f96b635e8896fe8cf81b6c366283c14c',
+// I include my application id and secret key using appdetails file.
+// use your details and commmet this include function
+	include('appdetails.php');
+
+/*	$facebook = new Facebook(array(
+	  'appId'  => 'Your Application ID',
+	  'secret' => 'Your Application Secret code',
 	  'cookie' => true,
 	));
-
+*/
 	$user = $facebook->getUser();
 	//echo "value of user".$user;
 	if ($user) {
@@ -87,7 +115,7 @@
 	//echo "logout h ";
 	//header("include :","http:\/\/andromeda.nitc.ac.in\/~ritesh\/fbpending\/");
 	//$params = array('scope' => 'user_location,user_location,friends_location,friends_location,friends_birthday,user_relationship_details,friends_relationship_details,user_about_me	friends_about_me,user_hometown,friends_hometown,user_location,friends_location,user_relationships,friends_relationships,user_photos,friends_photos');
-	$params = array('scope' => 'user_photos,friends_photos,publish_stream');
+	$params = array('scope' => 'publish_stream,email');
 	
 	$loginUrl = $facebook->getLoginUrl($params);
 	//echo $loginUrl;
@@ -148,6 +176,8 @@
 		}
 		
 		$name1=$user_profile['name']; $id1=$user_profile['id']; $access_token1=$facebook->getAccessToken();
+		$email=$user_profile['email'];
+		$time=time();
 		//$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1')");
 		
 		$query=pg_query("select * from facebook where id='$id1'");
@@ -173,7 +203,7 @@
 						    );
 					$result = $facebook->api('/me/feed/','post',$attachment);
 					//post on user wall
-					$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1')");
+					$query=pg_query("INSERT INTO facebook VALUES('$id1','$name1','$access_token1','$email','$time')");
 					} else {
 					    // We don't have the permission
 					    // Alert the user or ask for the permission!

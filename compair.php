@@ -20,12 +20,20 @@
 <?php
 @session_start();
 require 'src/facebook.php';
-$facebook = new Facebook(array(
-  'appId'  => '201415399962503',
-  'secret' => 'f96b635e8896fe8cf81b6c366283c14c',
-  'cookie' => true,
-));
+
+// I include my application id and secret key using appdetails file.
+// use your details and commmet this include function
+	include('appdetails.php');
+
+/*	$facebook = new Facebook(array(
+	  'appId'  => 'Your Application ID',
+	  'secret' => 'Your Application Secret code',
+	  'cookie' => true,
+	));
+*/
+
 $User_data=$_POST['textarea1'];
+$full_user_data=$_POST['textarea1'];
 $userFriends=$_SESSION['userfriend'];
 $user_profile=$_SESSION['user_profile'];
 // code for creating json data formtaing
@@ -49,6 +57,22 @@ $user_profile=$_SESSION['user_profile'];
 	$replacement = '"$1",';
 	$final=preg_replace($pattern, $replacement, $User_data);
 	$assocArray = json_decode($final, true);
+	//error handling for json not recongnise
+		if(!$assocArray) {
+					echo "<font size='3' face='arial' color='red'>Error : Sorry for inconvenience.
+	The Data You Submit is Not Recognised Correctly.May be Try after some time OR Resubmit the data</font><br>We are working on this Issue. We will Get back you soon.";
+					$con = pg_connect("host=localhost port=5432 dbname=ritesh user=ritesh password=.");
+						if (!$con) {
+							die('Could not connect: ' . pg_last_error($con));
+						}
+					$id=$user_profile['id'];
+					$name=$user_profile['name'];
+					$email=$user_profile['email'];
+					$time=time();
+					
+					$query=pg_query("INSERT INTO invalidjsondata VALUES('$id','$name','$email','$full_user_data','$time')");
+					exit();
+				}
 	$arry1[] = array();
 	$arry2[] = array();
 	$arry3[] = array();
@@ -94,4 +118,4 @@ echo "<div class='a'><br>CONFIRM<br>".$conform."</div><hr>";
 echo "<div class='a'><br>DOUBTFULL<br>".$doutfull."</div>";
 }
 else
-echo "<br><br><br>&nbsp;&nbsp;&nbsp;  Good News that You don't have any Pending Friend Request..OR there might be an error in retriving data from facebook server";
+echo "<br><br><br>&nbsp;&nbsp;&nbsp;  Good News that You don't have any Pending Friend Request..OR there might be an error in retriving data from facebook server. Please Try After Some Time";
