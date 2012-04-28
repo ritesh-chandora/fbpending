@@ -1,22 +1,16 @@
-<div style="margin:40px 0px 0px 80px; ">
+<div style="margin:40px 0px 0px 10px; color:RED; ">
 	<strong>Term and Conditions</strong></div>
 
 <br><ul>
-	<li>
-		<p style="margin-left: 80px; ">
-			1 : <span style="color: rgb(105, 105, 105); ">This application is not storing any Personal Information.</span></p>
+	<li><span style="color:#222; ">This application is not storing any Personal Information.</span>
+	</li><br>
+	<li> <span style="color:#222;">This Application fetch data from facebook using facbook API&#39;s so whatever result is displayed is come from facebook server. Author is not resposible for any mistake displayed.</span>
 	</li><br>
 	<li>
-		<p style="margin-left: 80px; ">
-			2 : <span style="color:#696969;">This Application fetch data from facebook using facbook API&#39;s so whatever result is displayed is come from facebook server. Author is not resposible for any mistake displayed.</span></p>
+<span style="color:#222;">Nothing is published without user permission</span>
 	</li><br>
 	<li>
-		<p style="margin-left: 80px; ">
-			3 : <span style="color:#696969;">Nothing is published without user permission</span></p>
-	</li>
-	<li>
-		<p style="margin-left: 80px; ">
-			4 : <span style="color:#696969;">Only access data when user is using.. No offline data access..&nbsp;</span></p>
+<span style="color:#222;">Only access data when user is using.. No offline data access..&nbsp;</span>
 	</li>
 </ul>
 

@@ -5,17 +5,18 @@
 	&nbsp;</p>
 <p style="margin-left: 120px; ">
 	&nbsp;</p>
-<div id="cke_pastebin" style="margin-left: 40px; ">
+<div id="cke_pastebin" style="margin-left: 40px; color:RED; ">
 	<strong>About me:</strong></div>
 <div id="cke_pastebin" style="margin-left: 40px; ">
 	<span style="font-family:comic sans ms,cursive;"><span style="color:#696969;">A graduate frm Lachoo Memorial College of Science and Technology jodhpur... Now pursuing MCA from NIT calicut...</span></span></div>
 <div id="cke_pastebin" style="margin-left: 40px; ">
 	<span style="font-family:comic sans ms,cursive;"><span style="color:#696969;">Interest in codding...<br />
 	Happy to be a friend....</span></span></div>
-<p style="margin-left: 40px; ">
+<p style="margin-left: 40px; color:RED;">
 	<br />
 	<strong>Contact:</strong><br />
-	<span style="color:#696969;"><strong>email</strong> : ritesh_chandora@yahoo.co.in<br />
-	<strong>phone</strong>: +918893970261<br />
-	<strong>facebook</strong>: www.facebook.com/ritesh.chandora<br /><br />
+	<span style="color:#696969;"><strong>Send Mail:</strong> <a href="mailto:ritesh_chandora@yahoo.co.in" target="_Blank">ritesh_chandora@yahoo.co.in<br /></a>
+	<strong>Phone</strong>: +918893970261 (India)<br />
+	<strong>Facebook</strong>: <a href="http://www.facebook.com/ritesh.chandora" target="_Blank"> www.facebook.com/ritesh.chandora </a><br />
+	<strong>My Blog </strong> : <a href="http://www.ritesh-chandora.blogspot.com" target="_Blank">www.ritesh-chandora.blogspot.com</a><br /> <br /><br />
 	</p>
