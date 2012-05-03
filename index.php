@@ -164,8 +164,8 @@ Released   : 20102110
 					<div id="boxresult">Thank you very much for your Valuable feedback</div>
 			<div class="box_input" >
 				Suggesion Box:<br>
-<label for="name">Name: </label><input type="text" name="name" size="15" id="name" value="" style="margin:5px 0px 0px 13px ;"><br>
-<label for="email">Email: </label><input type="text" name="email" size="15" id="email" style="margin:5px 0px 0px 13px ;"><br>
+<label for="name">Name: </label><input type="text" name="name" size="15" id="name"  style="margin:5px 0px 0px 5px ;"><br>
+<label for="email">Email: </label><input type="text" name="email" size="15" id="email"   style="margin:5px 0px 0px 5px ;"><br>
 <label for="comm">Comments:</label><br><textarea name="comm" id="comm" rows="4" cols="22" style="margin:5px 0px 0px 2px ;"></textarea><br>
 <input type="button" name="submit" id="submit" value="Submit">
 			</div>
@@ -324,7 +324,7 @@ Released   : 20102110
 								<div id="cke_pastebin">&nbsp;</div>
 								<div id="cke_pastebin">	<strong>Step1</strong>&nbsp;--: Click here<a href="<?php echo $urlajax;?>" target="_blank"> <img class="clickme" src="images/clickme.png"></a></div>
 								<div id="cke_pastebin">	&nbsp;</div>
-								<div id="cke_pastebin">	<strong>Step2</strong>--: After Click on Link.. New Tab has been Opend. Now Copy the content of Page and paste in text box..( Select all the data of &nbsp;page by pressing &quot;CTRL+A&quot; , then press &quot;CTRL+C&quot; for copy and paste the data in text box by press &quot;CTRL+V&quot; ).&nbsp;</div>
+								<div id="cke_pastebin">	<strong>Step2</strong>--: After Click on Link.. New Tab has been Opened. Now Copy the content of Page and paste in text box..( Select all the data of &nbsp;page by pressing &quot;CTRL+A&quot; , then press &quot;CTRL+C&quot; for copy and paste the data in text box by press &quot;CTRL+V&quot; ).&nbsp;</div>
 								<div id="cke_pastebin">&nbsp;</div>
 								<div id="cke_pastebin"><strong>Step3</strong>&nbsp;--: &nbsp;Press <strong>SUBMIT</strong> button and wait for 5-10 sec.</div> <br> <br>
 							</div>
@@ -369,8 +369,8 @@ Released   : 20102110
 								<div id="boxresult">Thank you very much for your Valuable feedback</div>
 									<div class="box_input" >
 										Suggesion Box:<br>
-										<label for="name">Name: </label><input type="text" name="name" size="15" id="name" value="" style="margin:5px 0px 0px 13px ;"><br>
-										<label for="email">Email: </label><input type="text" name="email" size="15" id="email" style="margin:5px 0px 0px 13px ;"><br>
+										<label for="name">Name: </label><input type="text" disabled name="name" size="15" id="name" style="margin:5px 0px 0px 5px ;"  value="<?php echo $user_profile['name'];?>"><br>
+										<label for="email">Email: </label><input type="text" disabled name="email" size="15" id="email" style="margin:5px 0px 0px 5px ;"  value="<?php echo $user_profile['email'];?>"><br>
 										<label for="comm">Comments:</label><br><textarea name="comm" id="comm" rows="4" cols="22" style="margin:5px 0px 0px 2px ;"></textarea><br>
 										<input type="button" name="submit" id="submit" value="Submit">
 									</div>

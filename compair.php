@@ -53,8 +53,10 @@ $user_profile=$_SESSION['user_profile'];
 
 
 
-	$pattern = '/(\d+),/i';
-	$replacement = '"$1",';
+//	$pattern = '/(\d+),/i';
+//	$replacement = '"$1",';
+	$pattern = '/(\"uid\":)(\d+),/i';
+	$replacement = '$1"$2",';
 	$final=preg_replace($pattern, $replacement, $User_data);
 	$assocArray = json_decode($final, true);
 	//error handling for json not recongnise

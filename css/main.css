@@ -15,7 +15,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 body {
 	margin: 0;
 	padding: 0;
-	background: #353535 url(images/img03.jpg) no-repeat center top;
+	background: #353535 url(../images/img03.jpg) no-repeat center top;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #534616;
@@ -241,7 +241,7 @@ a:hover {
 
 .post .title {
 	height: 38px;
-	background: #1E1E1E url(images/img01.jpg) no-repeat left top;
+	background: #1E1E1E url(../images/img01.jpg) no-repeat left top;
 	padding: 12px 0 0 20px;
 	letter-spacing: -.5px;
 	color: #FFFFFF;
@@ -272,7 +272,7 @@ a:hover {
 }
 
 .post .entry {
-	background: url(images/img02.jpg) no-repeat left top;
+	background: url(../images/img02.jpg) no-repeat left top;
 	padding: 0px 20px 20px 20px;
 	padding-bottom: 20px;
 	text-align: justify;

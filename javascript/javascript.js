@@ -1,6 +1,8 @@
 //document.getElementbyId('myOutput').innerHTML;
 		$(document).ready(function(){
 			  $(".button").click(function(){
+			  	if(!$(".textarea").val())
+			  		{alert("Please Paste the data you copied"); return ;}
 			  	$('#lodingimg').show();
 			  	$('.button').hide();
 				txt="textarea1="+$(".textarea").val().replace(/&/g, "and");
@@ -30,9 +32,9 @@
 		$(".result1").hide();
 			  });
 		
-		$(".suggestionbox_heading").click(function(){
-		$(".box").slideToggle("slow");
-			});		
+	//	$(".suggestionbox_heading").click(function(){
+	//	$(".box").slideToggle("slow");
+	//		});		
 		
 		 $("#submit").click(function(){
 			  	
