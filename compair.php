@@ -10,7 +10,7 @@
 <div style="margin: 10px 40px 0px 40px; ">
 	<span style="font-family:verdana,geneva,sans-serif;"><span style="font-size:14px;">If you wanna delete your request then<br />
 	<br />
-	1 Click on the Pending Requests and&nbsp;their profile will open in next tab.<br />
+	1 Click on the Pending Requests images and&nbsp;their profile will open in next tab.<br />
 	2. Put mouse on &nbsp;<img alt="image" src="images/friendrequestsend.png" style="vertical-align:middle;font-size: 14px; font-family: tahoma, geneva, sans-serif; width: 109px; height: 17px; " />&nbsp; and hover will appear, then click on Cancle Request.</span></span><br />
 	&nbsp;</div>
 
@@ -102,9 +102,9 @@ $counter=0;
 						$counter++;
 						$validity=$facebook->api('/'.$value);
 						if($validity)
-						$conform=$conform."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
+						$conform=$conform."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img width='72px' height='72px' src=".$assocArray['entries'][$i]['photo'].">"."<div id='desc'>".$assocArray["entries"][$i]["text"]."</div></a></li>";
 						else
-						$doutfull=$doutfull."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img src=".$assocArray['entries'][$i]['photo'].">"."<h3>".$assocArray["entries"][$i]["text"]."</h3></a></li>";
+						$doutfull=$doutfull."<li class='level4_li'><a href=http://www.facebook.com".$assocArray['entries'][$i]['path']." target='_blank'><img width='72px' height='72px' src=".$assocArray['entries'][$i]['photo'].">"."<div id='desc'>".$assocArray["entries"][$i]["text"]."</div></a></li>";
 					    }
 					catch (FacebookApiException $e) {
 						 error_log($e);
@@ -116,8 +116,8 @@ $counter=0;
 		}
 if($counter)
 		{
-echo "<div class='a'><br>CONFIRM<br>".$conform."</div><hr>";
-echo "<div class='a'><br>DOUBTFULL<br>".$doutfull."</div>";
+echo "<div class='a'><br><h3><b>CONFIRM</b></h3><br>".$conform."</div><hr>";
+echo "<div class='a'><b><br><h3>DOUBTFULL</b></h3><br>".$doutfull."</div>";
 }
 else
 echo "<br><br><br>&nbsp;&nbsp;&nbsp;  Good News that You don't have any Pending Friend Request..OR there might be an error in retriving data from facebook server. Please Try After Some Time";

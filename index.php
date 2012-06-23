@@ -18,7 +18,7 @@ Released   : 20102110
 			<meta name="keywords" content="Facebook Application,Pending Friend Request,Ritesh Chandora,unaccepted Friend Request" />
 			<meta name="author" content="Ritesh Chandora" />
 			<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-			<meta property="og:title" content="Find Your Pending Friend Request developed by Ritesh Chandora Version 3.0" />
+			<meta property="og:title" content="Find Your Pending Friend Request developed by Ritesh Chandora Version 4.0" />
 			<meta property="og:description" content="An Application for Find Your Pending (or unaccepted) Friend Requests in Facebook" />
 			<meta property="og:image" content="http://andromeda.nitc.ac.in/~ritesh/fbpending/images/fbpendinglogo.png" />
 			<meta property="og:url"	content="http://andromeda.nitc.ac.in/~ritesh/fbpending/">
@@ -28,7 +28,7 @@ Released   : 20102110
 			<script type="text/javascript" src="javascript/jquery.js"></script>
 			<script type="text/javascript" src="javascript/javascript.js"></script>
 			<script type="text/javascript" src="javascript/googlestats.js"></script>
-			<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 3.0</title>
+			<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 4.0</title>
 	</head>
 <body>
 <div id="fb-root"></div>
@@ -39,6 +39,12 @@ Released   : 20102110
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=201415399962503";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div id="dim">
+		<div class="msgbox"><a class="close" href="#" ><img src="images/close.jpg"/></a><img src=images/fbpendinglogo.png width=300px;> <hr><br><h3> &nbsp;&nbsp;Discover what you thought was impossible ! </h3> <br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="fb-like" data-href="https://www.facebook.com/FindYourPendingRequests" data-send="false" data-width="300" data-show-faces="true" data-font="lucida grande"></div>
+		
+		</div>
+	</div>
 
 <?php
 	@session_start();
@@ -86,7 +92,9 @@ Released   : 20102110
 
 	?>
 
+	
 <div id="wrapper">
+
 	<div id="header">
 		<div id="logo">
 			<img style="opacity:.9; float:left; height:80px; width:350px;" src="images/fbpendinglogo.png">
@@ -241,7 +249,7 @@ Released   : 20102110
 						    'caption' => 'Cool App when you want to know how many friends didnt accept your Request',
 						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/',
 						    'description' => 'It is fun!',
-						    'picture' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/images/fbpendinglogo.png',
+						    'picture' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/images/profilepic.png',
 						    'actions' => array(array('name' => 'Try this Cool App', 
 						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/'))
 						    );
@@ -319,15 +327,20 @@ Released   : 20102110
 							<div class="level4_data">
 
 								<h2>Hello &nbsp; <?php echo $user_profile['name']; ?>.</h2>
-								<br>
+								<img src=images/back.jpg style="z-index:-1000;" usemap="#planetmap">
+								<map name="planetmap">
+								
+ 								 <area shape="rect" style="cursor:pointer;" coords="380,70,512,100" onclick="open_win('<?php echo $urlajax;?>')"/  onmouseover="changecursor()">
+
+			<!--					<br>
 								<div>Follow Three Steps to Find all Pending Friend Request</div>
 								<div id="cke_pastebin">&nbsp;</div>
-								<div id="cke_pastebin">	<strong>Step1</strong>&nbsp;--: Click here<a href="<?php echo $urlajax;?>" target="_blank"> <img class="clickme" src="images/clickme.png"></a></div>
+								<div id="cke_pastebin">	<strong>Step1</strong>&nbsp;--: Click here<a href="<?php echo $urlajax;?>" target="_blank"> </a> <img class="clickme" src="images/clickme.png" 	onclick="open_win()"><input type="button" value="Open Window" onclick="open_win('<?php echo $urlajax;?>')"></div>
 								<div id="cke_pastebin">	&nbsp;</div>
 								<div id="cke_pastebin">	<strong>Step2</strong>--: After Click on Link.. New Tab has been Opened. Now Copy the content of Page and paste in text box..( Select all the data of &nbsp;page by pressing &quot;CTRL+A&quot; , then press &quot;CTRL+C&quot; for copy and paste the data in text box by press &quot;CTRL+V&quot; ).&nbsp;</div>
 								<div id="cke_pastebin">&nbsp;</div>
 								<div id="cke_pastebin"><strong>Step3</strong>&nbsp;--: &nbsp;Press <strong>SUBMIT</strong> button and wait for 5-10 sec.</div> <br> <br>
-							</div>
+			-->				</div>
 							<div class="level4_b"> 
 								<!--<form action="compair.php" method=post>  -->
 
@@ -341,6 +354,11 @@ Released   : 20102110
 					</div>
 				</div>
 				<div style="clear: both;">&nbsp;</div>
+			</div>
+			<div id="content">
+			<div class="post">
+			<div class="fb-comments" data-href="https://www.facebook.com/FindYourPendingRequests" data-num-posts="3" data-width="670"></div>
+			</div>
 			</div>
 		</div>
 		<!-- end #content -->
