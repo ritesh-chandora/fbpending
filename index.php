@@ -18,7 +18,7 @@ Released   : 20102110
 			<meta name="keywords" content="Facebook Application,Pending Friend Request,Ritesh Chandora,unaccepted Friend Request" />
 			<meta name="author" content="Ritesh Chandora" />
 			<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-			<meta property="og:title" content="Find Your Pending Friend Request developed by Ritesh Chandora Version 4.0" />
+			<meta property="og:title" content="Find Your Pending Friend Request developed by Ritesh Chandora Version 5.0" />
 			<meta property="og:description" content="An Application for Find Your Pending (or unaccepted) Friend Requests in Facebook" />
 			<meta property="og:image" content="http://andromeda.nitc.ac.in/~ritesh/fbpending/images/fbpendinglogo.png" />
 			<meta property="og:url"	content="http://andromeda.nitc.ac.in/~ritesh/fbpending/">
@@ -28,7 +28,7 @@ Released   : 20102110
 			<script type="text/javascript" src="javascript/jquery.js"></script>
 			<script type="text/javascript" src="javascript/javascript.js"></script>
 			<script type="text/javascript" src="javascript/googlestats.js"></script>
-			<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 4.0</title>
+			<title>Find Your Pending Friend Request developed by Ritesh Chandora Version 5.0</title>
 	</head>
 <body>
 <div id="fb-root"></div>
@@ -244,14 +244,14 @@ Released   : 20102110
 					{
 					    // Permission is granted!
 					    // Do the related task
-					$attachment = array('message' => 'just found all their Pending Friend Requests you can do the same',
+					$attachment = array('message' => 'Hey Friends, I just found my all Pending Friend Requests and you can do the same',
 						    'name' => 'Find Your All Unaccepted Friend Requests',
 						    'caption' => 'Cool App when you want to know how many friends didnt accept your Request',
-						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/',
+						    'link' => 'https://apps.facebook.com/pending_request/',
 						    'description' => 'It is fun!',
 						    'picture' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/images/profilepic.png',
 						    'actions' => array(array('name' => 'Try this Cool App', 
-						    'link' => 'http://andromeda.nitc.ac.in/~ritesh/fbpending/'))
+						    'link' => 'https://apps.facebook.com/pending_request/'))
 						    );
 					$result = $facebook->api('/me/feed/','post',$attachment);
 					//post on user wall
@@ -344,7 +344,7 @@ Released   : 20102110
 							<div class="level4_b"> 
 								<!--<form action="compair.php" method=post>  -->
 
-									<textarea rows="8" cols="28" name="textarea1" class="textarea"></textarea>
+									<textarea rows="8" cols="50" name="textarea1" class="textarea"></textarea>
 									</br>
 									<input type=button class="button" name="button1" value="SUBMIT">
 									<img src="images/loding.gif" id="lodingimg">

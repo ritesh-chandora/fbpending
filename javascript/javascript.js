@@ -7,7 +7,10 @@
 				var RegexForOrignalData = /payload/;
 				var matchpos1 = $(".textarea").val().search(RegexForOrignalData);
 				if(matchpos1==-1)
-					{alert("Data you have entered is incorrect. Please read the instruction carefully"); return ;}
+					{alert("Data you have entered is incorrect. Please read the instruction carefully"); return ;}					
+				var n=$(".textarea").val().match(/payload/g);
+				if(n.length>1)
+					{alert("You entered the same data multiple times in textbox.\n Reenter the correct data only once."); return ;}
 				var RegexForCompleteData = /display_ttl/;
 				var matchpos1 = $(".textarea").val().search(RegexForCompleteData);
 				if(matchpos1==-1)
